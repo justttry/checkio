@@ -1,6 +1,9 @@
 #encoding:UTF-8
 def check_connection(network, first, second):
-    return True or False
+    relations = [i.split('-') for i in network]
+    sets = []
+    
+        
 
 
 if __name__ == '__main__':

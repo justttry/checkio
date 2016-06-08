@@ -10,7 +10,14 @@
 
 
 def safe_pawns(pawns):
-    return 0
+    ret = list(pawns)
+    for item in pawns:
+        l = map(''.join, zip([chr(ord(item[0])-1), item[0], chr(ord(item[0])+1)], 
+                             [chr(ord(item[1])-1)]*3))
+        if not bool(set(pawns) - (set(pawns) - set(l))):
+            ret.remove(item)
+    return len(ret)
+        
 
 if __name__ == '__main__':
     #These "asserts" using only for self-checking and not necessary for auto-testing
